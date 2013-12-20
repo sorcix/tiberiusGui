@@ -149,7 +149,6 @@ void MainWindow::toolchain_hasOutput() {
 }
 
 void MainWindow::toolchain_finished(bool error, Toolchain::State state) {
-	qDebug() << error << state;
 
 	this->ui->progressBar->setMaximum(100);
 
