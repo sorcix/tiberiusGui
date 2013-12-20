@@ -17,7 +17,7 @@ Toolchain::Toolchain(QObject *parent) : QObject(parent) {
 Toolchain::~Toolchain() {
 
 	if(this->process->state() != QProcess::NotRunning) {
-		this->process->terminate();
+		this->process->kill();
 		this->process->waitForFinished();
 	}
 
@@ -70,7 +70,7 @@ void Toolchain::build(Project *project) {
 
 void Toolchain::stop() {
 	this->terminated = true;
-	this->process->terminate();
+	this->process->kill();
 }
 
 QByteArray Toolchain::readOutput() {
