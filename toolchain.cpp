@@ -129,5 +129,17 @@ void Toolchain::process_readyReadStandardOutput() {
 }
 
 void Toolchain::process_error(QProcess::ProcessError error) {
-	emit this->error();
+
+	Toolchain::State oldState = this->state;
+
+	this->state = Toolchain::StateIdle;
+
+	if(error == QProcess::FailedToStart) {
+		emit this->error();
+	} else {
+
+		// This happens when we kill the process (serve, ..)
+		emit this->finished(false, oldState);
+	}
+
 }
