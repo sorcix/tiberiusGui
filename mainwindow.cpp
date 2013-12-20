@@ -67,6 +67,7 @@ void MainWindow::on_actionAbout_triggered() {
 	QString about, version;
 
 	about = "Tiberius Gui v"+QString(TIBERIUS_GUI_VERSION)+"\nCopyright 2013 Vic Demuzere\n\n";
+	about += "Licensed under the The MIT License (MIT)\nhttps://github.com/sorcix/tiberiusGui\n\n";
 
 	version = this->toolchain->versionString();
 
