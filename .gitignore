@@ -1,0 +1,17 @@
+*.o
+*.exe
+*.dll
+/tiberiusGui
+
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+
+/Debug/
+/Release/
+
+*.log
+
+*~
+
+*.pro.user

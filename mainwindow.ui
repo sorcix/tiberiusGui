@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>539</width>
+    <height>424</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QTiberius</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="toolbar.qrc">
+    <normaloff>:/icons/tiberius</normaloff>:/icons/tiberius</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>16</number>
+    </property>
+    <item>
+     <widget class="QGroupBox" name="groupProject">
+      <property name="title">
+       <string>Project Details</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <property name="labelAlignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+       <property name="horizontalSpacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelTitle">
+         <property name="text">
+          <string>Title:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelWebmaster">
+         <property name="text">
+          <string>Webmaster:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelAddress">
+         <property name="text">
+          <string>Address:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelPath">
+         <property name="text">
+          <string>Path:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="textWebmaster">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="textTitle">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="textAddress">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="textPath">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="groupTiberius">
+      <property name="title">
+       <string>Toolchain status</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="labelStatus">
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Loading...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar">
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="textVisible">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPlainTextEdit" name="textStatus">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>26</width>
+     <height>26</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionCreate"/>
+   <addaction name="actionOpen"/>
+   <addaction name="separator"/>
+   <addaction name="actionDetails"/>
+   <addaction name="actionBrowse"/>
+   <addaction name="separator"/>
+   <addaction name="actionServe"/>
+   <addaction name="actionBuild"/>
+   <addaction name="actionCancel"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>539</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionCreate"/>
+    <addaction name="actionOpen"/>
+    <addaction name="actionClose"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>Tiberius</string>
+    </property>
+    <addaction name="actionServe"/>
+    <addaction name="actionBuild"/>
+    <addaction name="separator"/>
+    <addaction name="actionCancel"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionWebsite"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>Project</string>
+    </property>
+    <addaction name="actionBrowse"/>
+    <addaction name="actionDetails"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuProject"/>
+   <addaction name="menuView"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionCreate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/create</normaloff>:/toolbar/create</iconset>
+   </property>
+   <property name="text">
+    <string>Create</string>
+   </property>
+   <property name="toolTip">
+    <string>Create a new Tiberius project.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/open</normaloff>:/toolbar/open</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open an existing Tiberius project.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+O</string>
+   </property>
+  </action>
+  <action name="actionServe">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/serve</normaloff>:/toolbar/serve</iconset>
+   </property>
+   <property name="text">
+    <string>Serve</string>
+   </property>
+   <property name="toolTip">
+    <string>Serve the current project with the development webserver.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+S</string>
+   </property>
+  </action>
+  <action name="actionBuild">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/build</normaloff>:/toolbar/build</iconset>
+   </property>
+   <property name="text">
+    <string>Build</string>
+   </property>
+   <property name="toolTip">
+    <string>Generate the static website.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+B</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/about</normaloff>:/toolbar/about</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="toolTip">
+    <string>About Tiberius GUI</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit the Tiberius GUI application.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+Q</string>
+   </property>
+  </action>
+  <action name="actionWebsite">
+   <property name="text">
+    <string>Website</string>
+   </property>
+   <property name="toolTip">
+    <string>Visit the Tiberius website for more information.</string>
+   </property>
+  </action>
+  <action name="actionCancel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/cancel</normaloff>:/toolbar/cancel</iconset>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+   <property name="toolTip">
+    <string>Cancel the running Tiberius task.</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+C</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="toolTip">
+    <string>Close the current project.</string>
+   </property>
+  </action>
+  <action name="actionDetails">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/details</normaloff>:/toolbar/details</iconset>
+   </property>
+   <property name="text">
+    <string>Details</string>
+   </property>
+   <property name="toolTip">
+    <string>View project details pane.</string>
+   </property>
+  </action>
+  <action name="actionBrowse">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="toolbar.qrc">
+     <normaloff>:/toolbar/browse</normaloff>:/toolbar/browse</iconset>
+   </property>
+   <property name="text">
+    <string>Browse</string>
+   </property>
+   <property name="toolTip">
+    <string>Open the project folder on disk.</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="toolbar.qrc"/>
+ </resources>
+ <connections/>
+</ui>

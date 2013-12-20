@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/toolbar">
+        <file alias="build">toolbar/build.png</file>
+        <file alias="create">toolbar/create.png</file>
+        <file alias="open">toolbar/open.png</file>
+        <file alias="serve">toolbar/serve.png</file>
+        <file alias="about">toolbar/about.png</file>
+        <file alias="cancel">toolbar/cancel.png</file>
+        <file alias="browse">toolbar/browse.png</file>
+        <file alias="details">toolbar/details.png</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="tiberius">icons/machine.ico</file>
+    </qresource>
+</RCC>
